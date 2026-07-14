@@ -8,14 +8,15 @@
 
 ## 含まれるリンク
 
-- **勉強・学習**: テスト勉強サイト
-- **ツール**: 電卓、Canva、Cursor
+- **勉強・学習**: テスト勉強サイト、Quizlet、YouTube
+- **開発・メモ**: GitHub、Notion、Cursor、AtCoder
+- **ツール**: Desmos 関数電卓、Canva、Figma、Excalidraw、DeepL
+- **AI アシスタント**: ChatGPT、Gemini、Claude
 - **Google Workspace**: Gmail、ドライブ、カレンダー、ドキュメント、スプレッドシート、スライド、Meet、フォーム、Keep、Chat
 
 ## ローカルで確認
 
 ```bash
-# 簡易サーバーで開く場合（任意）
 python3 -m http.server 8080
 # ブラウザで http://localhost:8080 を開く
 ```
