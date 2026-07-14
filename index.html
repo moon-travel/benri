@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>便利ポータル | benri</title>
+  <meta name="description" content="よく使うサイトやツールへのショートカット集">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --surface: #ffffff;
+      --text: #1a1d26;
+      --text-muted: #5c6370;
+      --border: #e4e8f0;
+      --accent: #4f6ef7;
+      --accent-soft: #eef1ff;
+      --shadow: 0 4px 24px rgba(26, 29, 38, 0.06);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4f6ef7 0%, #6b4fd8 100%);
+      color: #fff;
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      margin-top: 0.75rem;
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+
+    .search-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 0.25rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-box svg {
+      flex-shrink: 0;
+      color: var(--text-muted);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font: inherit;
+      font-size: 1rem;
+      padding: 0.9rem 0;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--accent);
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.15rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 28px rgba(79, 110, 247, 0.15);
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .icon.study { background: #fff3e0; }
+    .icon.tool { background: #e8f5e9; }
+    .icon.google { background: var(--accent-soft); }
+
+    .card-body h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-body p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2.25rem 1rem 3.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>便利ポータル</h1>
+    <p>よく使うサイト・ツールへのショートカット</p>
+  </header>
+
+  <main class="container">
+    <div class="search-box" role="search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="search" id="search" placeholder="サイト名で検索..." aria-label="サイトを検索">
+    </div>
+
+    <section class="section" aria-labelledby="study-heading">
+      <h2 class="section-title" id="study-heading">勉強・学習</h2>
+      <div class="grid">
+        <a class="card" href="https://econanringo.xsrv.jp/test/" target="_blank" rel="noopener noreferrer" data-keywords="テスト 勉強 学習 問題">
+          <div class="icon study" aria-hidden="true">📚</div>
+          <div class="card-body">
+            <h3>テスト勉強サイト</h3>
+            <p>テスト対策の勉強ページ</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tools-heading">
+      <h2 class="section-title" id="tools-heading">ツール</h2>
+      <div class="grid">
+        <a class="card" href="https://www.google.com/search?q=calculator" target="_blank" rel="noopener noreferrer" data-keywords="電卓 計算 calculator">
+          <div class="icon tool" aria-hidden="true">🔢</div>
+          <div class="card-body">
+            <h3>電卓</h3>
+            <p>Google 電卓で計算</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer" data-keywords="canva デザイン 画像 作成">
+          <div class="icon tool" aria-hidden="true">🎨</div>
+          <div class="card-body">
+            <h3>Canva</h3>
+            <p>デザイン・資料作成</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://cursor.com/" target="_blank" rel="noopener noreferrer" data-keywords="cursor エディタ コーディング AI">
+          <div class="icon tool" aria-hidden="true">💻</div>
+          <div class="card-body">
+            <h3>Cursor</h3>
+            <p>AI 搭載コードエディタ</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="google-heading">
+      <h2 class="section-title" id="google-heading">Google Workspace</h2>
+      <div class="grid">
+        <a class="card" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="gmail メール mail">
+          <div class="icon google" aria-hidden="true">✉️</div>
+          <div class="card-body">
+            <h3>Gmail</h3>
+            <p>メールの送受信</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="drive ドライブ ファイル 保存">
+          <div class="icon google" aria-hidden="true">📁</div>
+          <div class="card-body">
+            <h3>Google ドライブ</h3>
+            <p>ファイルの保存・共有</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="calendar カレンダー 予定 スケジュール">
+          <div class="icon google" aria-hidden="true">📅</div>
+          <div class="card-body">
+            <h3>Google カレンダー</h3>
+            <p>予定・スケジュール管理</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://docs.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="docs ドキュメント 文書 ワード">
+          <div class="icon google" aria-hidden="true">📝</div>
+          <div class="card-body">
+            <h3>Google ドキュメント</h3>
+            <p>文書の作成・編集</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://sheets.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="sheets スプレッドシート 表 計算">
+          <div class="icon google" aria-hidden="true">📊</div>
+          <div class="card-body">
+            <h3>Google スプレッドシート</h3>
+            <p>表計算・データ管理</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://slides.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="slides スライド プレゼン 発表">
+          <div class="icon google" aria-hidden="true">📽️</div>
+          <div class="card-body">
+            <h3>Google スライド</h3>
+            <p>プレゼン資料の作成</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="meet ミート 会議 ビデオ通話">
+          <div class="icon google" aria-hidden="true">🎥</div>
+          <div class="card-body">
+            <h3>Google Meet</h3>
+            <p>オンライン会議・通話</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="forms フォーム アンケート 調査">
+          <div class="icon google" aria-hidden="true">📋</div>
+          <div class="card-body">
+            <h3>Google フォーム</h3>
+            <p>アンケート・フォーム作成</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://keep.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="keep メモ ノート 付箋">
+          <div class="icon google" aria-hidden="true">📌</div>
+          <div class="card-body">
+            <h3>Google Keep</h3>
+            <p>メモ・付箋</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://chat.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="chat チャット メッセージ 連絡">
+          <div class="icon google" aria-hidden="true">💬</div>
+          <div class="card-body">
+            <h3>Google Chat</h3>
+            <p>チームチャット</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>benri — 便利なものを集めたポータルサイト</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+
+      cards.forEach(function (card) {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const desc = card.querySelector("p").textContent.toLowerCase();
+        const keywords = (card.dataset.keywords || "").toLowerCase();
+        const match = !query || title.includes(query) || desc.includes(query) || keywords.includes(query);
+        card.classList.toggle("hidden", !match);
+      });
+    });
+  </script>
+
+</body>
+</html>
