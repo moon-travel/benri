@@ -143,6 +143,8 @@
 
     .icon.study { background: #fff3e0; }
     .icon.tool { background: #e8f5e9; }
+    .icon.dev { background: #e3f2fd; }
+    .icon.ai { background: #fce4ec; }
     .icon.google { background: var(--accent-soft); }
 
     .card-body h3 {
@@ -201,17 +203,70 @@
             <p>テスト対策の勉強ページ</p>
           </div>
         </a>
+
+        <a class="card" href="https://quizlet.com/ja" target="_blank" rel="noopener noreferrer" data-keywords="quizlet クイズレット 単語 暗記 フラッシュカード">
+          <div class="icon study" aria-hidden="true">🃏</div>
+          <div class="card-body">
+            <h3>Quizlet</h3>
+            <p>単語・用語の暗記カード</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" data-keywords="youtube ユーチューブ 動画 学習 解説">
+          <div class="icon study" aria-hidden="true">▶️</div>
+          <div class="card-body">
+            <h3>YouTube</h3>
+            <p>解説動画・学習コンテンツ</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="dev-heading">
+      <h2 class="section-title" id="dev-heading">開発・メモ</h2>
+      <div class="grid">
+        <a class="card" href="https://github.com/" target="_blank" rel="noopener noreferrer" data-keywords="github ギットハブ コード リポジトリ git">
+          <div class="icon dev" aria-hidden="true">🐙</div>
+          <div class="card-body">
+            <h3>GitHub</h3>
+            <p>コード管理・共有</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" data-keywords="notion ノーション メモ ノート 資料">
+          <div class="icon dev" aria-hidden="true">📒</div>
+          <div class="card-body">
+            <h3>Notion</h3>
+            <p>メモ・資料・タスク管理</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://cursor.com/" target="_blank" rel="noopener noreferrer" data-keywords="cursor エディタ コーディング AI">
+          <div class="icon dev" aria-hidden="true">💻</div>
+          <div class="card-body">
+            <h3>Cursor</h3>
+            <p>AI 搭載コードエディタ</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://atcoder.jp/" target="_blank" rel="noopener noreferrer" data-keywords="atcoder アットコーダ 競技プログラミング プログラミング 練習">
+          <div class="icon dev" aria-hidden="true">⚡</div>
+          <div class="card-body">
+            <h3>AtCoder</h3>
+            <p>競技プログラミングの練習</p>
+          </div>
+        </a>
       </div>
     </section>
 
     <section class="section" aria-labelledby="tools-heading">
       <h2 class="section-title" id="tools-heading">ツール</h2>
       <div class="grid">
-        <a class="card" href="https://www.google.com/search?q=calculator" target="_blank" rel="noopener noreferrer" data-keywords="電卓 計算 calculator">
+        <a class="card" href="https://www.desmos.com/scientific?lang=ja" target="_blank" rel="noopener noreferrer" data-keywords="desmos デスモス 電卓 関数電卓 計算 グラフ">
           <div class="icon tool" aria-hidden="true">🔢</div>
           <div class="card-body">
-            <h3>電卓</h3>
-            <p>Google 電卓で計算</p>
+            <h3>Desmos 関数電卓</h3>
+            <p>関数・グラフ・科学計算</p>
           </div>
         </a>
 
@@ -223,11 +278,56 @@
           </div>
         </a>
 
-        <a class="card" href="https://cursor.com/" target="_blank" rel="noopener noreferrer" data-keywords="cursor エディタ コーディング AI">
-          <div class="icon tool" aria-hidden="true">💻</div>
+        <a class="card" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" data-keywords="figma フィグマ デザイン UI ワイヤーフレーム">
+          <div class="icon tool" aria-hidden="true">🖌️</div>
           <div class="card-body">
-            <h3>Cursor</h3>
-            <p>AI 搭載コードエディタ</p>
+            <h3>Figma</h3>
+            <p>UI・デザインの共同編集</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://excalidraw.com/" target="_blank" rel="noopener noreferrer" data-keywords="excalidraw ホワイトボード 図 メモ 手書き">
+          <div class="icon tool" aria-hidden="true">✏️</div>
+          <div class="card-body">
+            <h3>Excalidraw</h3>
+            <p>手書き風の図・メモ作成</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://www.deepl.com/ja/translator" target="_blank" rel="noopener noreferrer" data-keywords="deepl ディープル 翻訳 英語 日本語">
+          <div class="icon tool" aria-hidden="true">🌐</div>
+          <div class="card-body">
+            <h3>DeepL 翻訳</h3>
+            <p>高精度な翻訳ツール</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ai-heading">
+      <h2 class="section-title" id="ai-heading">AI アシスタント</h2>
+      <div class="grid">
+        <a class="card" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" data-keywords="chatgpt チャットgpt AI 質問 勉強">
+          <div class="icon ai" aria-hidden="true">🤖</div>
+          <div class="card-body">
+            <h3>ChatGPT</h3>
+            <p>質問・文章作成・学習補助</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" data-keywords="gemini ジェミニ AI google 質問">
+          <div class="icon ai" aria-hidden="true">✨</div>
+          <div class="card-body">
+            <h3>Gemini</h3>
+            <p>Google の AI アシスタント</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" data-keywords="claude クロード AI 質問 文章">
+          <div class="icon ai" aria-hidden="true">🧠</div>
+          <div class="card-body">
+            <h3>Claude</h3>
+            <p>長文・コード向け AI</p>
           </div>
         </a>
       </div>
